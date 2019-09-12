@@ -1,0 +1,14 @@
+<li [ngClass]="{'list-group-item':true,
+                'list-group-item-success':postLoveIts > 0,
+                'list-group-item-danger':postLoveIts < 0
+              }">
+  <i class="dtePost">{{ postCreatedAt | date: 'short' }}</i>
+  <h4 class="list-group-item-heading">{{ postTitle }}</h4>
+  <p class="list-group-item-text">{{ postContent }}</p>
+  <div class="btn-group" role="group" aria-label="...">
+    <button type="button" class="btn btn-success"
+    (click)="chgPostLoveIts(1)">Love it!</button>
+    <button type="button" class="btn btn-danger"
+    (click)="chgPostLoveIts(-1)">Don't love it!</button>
+  </div>
+</li>
